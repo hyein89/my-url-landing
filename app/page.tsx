@@ -112,57 +112,44 @@ export default function Home() {
 </section>
 
 <section id="about" className="px-4 py-20 bg-gray-100 dark:bg-gray-800 transition-colors">
-  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10">
     
-    {/* Gambar */}
-    <div>
-<img
-  src="/about.svg"
-  alt="Tentang shorten"
-  className="w-full h-auto"
-  loading="lazy"
-/>
-
+    {/* Gambar di kiri (atau di atas saat ponsel) */}
+    <div className="w-full md:w-1/2 flex justify-center">
+      <img
+        src="/about.svg"
+        alt="Tentang QuickShort"
+        className="w-full max-w-sm h-auto"
+        loading="lazy"
+      />
     </div>
 
-    {/* Teks */}
-    <div className="space-y-10">
+    {/* Teks di kanan */}
+    <div className="w-full md:w-1/2 space-y-10">
       <div>
-        <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-          How Do URL Shortening Services Work?
-        </h3>
+        <h3 className="text-2xl font-bold mb-4">How Do URL Shortening Services Work?</h3>
         <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-          URL shortening services help you shorten long URLs into shorter, shareable ones. By simply entering a long URL, you will get a short link that can be shared easily. Take advantage of URL shortening to make the link appear cleaner and more attractive.
+          URL shortening services help you shorten long URLs into shorter, shareable ones. By simply entering a long URL, you will get a short link that can be shared easily. Take advantage of URL shortening to make the link appear cleaner and more attractive..
         </p>
       </div>
-
-      <div>
-        <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-          Simple and fast URL shortener!
-        </h3>
+    </div>
+        <h3 className="text-2xl font-bold mb-4">Simple and fast URL shortener!</h3>
         <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-          ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, LinkedIn, WhatsApp,
-          TikTok, blogs and any domain name. Just paste the long URL and click the Shorten URL button. On the next
-          page, copy the shortened URL and share it on sites, chat and emails.
+          ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, Linked In, WhatsApp,
+          TikTok, blogs and any domain name. Just paste the long URL and click the Shorten URL button.
         </p>
       </div>
-
       <div>
-        <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-          Shorten, share and track
-        </h3>
+        <h3 className="text-2xl font-bold mb-4">Shorten, share and track</h3>
         <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
           Your shortened URLs can be used in publications, documents, ads, blogs, and more. Track statistics for
           your business and projects by monitoring the number of hits with our click counter.
         </p>
       </div>
     </div>
-
+    
   </div>
 </section>
-
-
-
       {/* Footer */}
       <footer className="bg-white dark:bg-gray-900 border-t dark:border-gray-700 px-4 py-12 text-sm text-gray-600 dark:text-gray-400">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
