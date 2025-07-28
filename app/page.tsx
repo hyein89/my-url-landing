@@ -62,11 +62,15 @@ export default function Home() {
       {/* Tentang */}
       <section id="about" className="px-4 py-20 bg-gray-100">
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-2xl font-bold mb-4">Tentang QuickShort</h3>
+          <h3 className="text-2xl font-bold mb-4">Simple and fast URL shortener!</h3>
           <p className="text-gray-700 text-base leading-relaxed">
-            QuickShort adalah layanan pemendek tautan sederhana yang dirancang untuk semua pengguna
-            yang ingin membagikan link secara praktis. Kami percaya bahwa kemudahan berbagi informasi
-            dimulai dari link yang ringkas dan bersih.
+            ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, Linked In, WhatsApp, TikTok, blogs and any domain name. Just paste the long URL and click the Shorten URL button. On the next page, copy the shortened URL and share it on sites, chat and emails. After shortening the URL, check how many clicks it received.
+          </p>
+        </div>
+        <div className="max-w-3xl mx-auto">
+          <h3 className="text-2xl font-bold mb-4">Shorten, share and track</h3>
+          <p className="text-gray-700 text-base leading-relaxed">
+            Your shortened URLs can be used in publications, documents, advertisements, blogs, forums, instant messages, and other locations. Track statistics for your business and projects by monitoring the number of hits from your URL with our click counter.
           </p>
         </div>
       </section>
