@@ -1,5 +1,4 @@
-// Jika kamu letakkan di app/globals.css:
-import "./globals.css";
+import "../styles/globals.css"; // SESUAI karena kamu pakai /styles
 
 export const metadata = {
   title: "QuickShort - Shorten URL",
