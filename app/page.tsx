@@ -40,28 +40,43 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Fitur */}
-      <section id="features" className="px-4 py-20 bg-white dark:bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-2xl font-bold mb-12 text-center md:text-left">
-            Kenapa memilih QuickShort?
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[
-              { icon: <Zap size={28} />, title: "Mudah & Cepat", desc: "Hanya dengan satu klik, link panjang Anda langsung dipendekkan." },
-              { icon: <UserX size={28} />, title: "Tanpa Daftar", desc: "Gunakan layanan kami tanpa akun atau login." },
-              { icon: <DollarSign size={28} />, title: "Gratis Selamanya", desc: "Layanan pemendek URL ini sepenuhnya gratis." },
-            ].map((item, i) => (
-              <div key={i} className="p-6 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 shadow-sm h-full space-y-3">
-                <div className="text-blue-600 dark:text-blue-400">{item.icon}</div>
-                <h4 className="font-semibold text-lg">{item.title}</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
-              </div>
-            ))}
-          </div>
+<section id="features" className="px-4 py-20 bg-white dark:bg-gray-900">
+  <div className="max-w-6xl mx-auto">
+    <h3 className="text-2xl font-bold mb-12 text-center md:text-left">
+      Kenapa memilih QuickShort?
+    </h3>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {[
+        {
+          icon: "/icons/fast.svg",
+          title: "Mudah & Cepat",
+          desc: "Hanya dengan satu klik, link panjang Anda langsung dipendekkan.",
+        },
+        {
+          icon: "/icons/nosignup.svg",
+          title: "Tanpa Daftar",
+          desc: "Gunakan layanan kami tanpa akun atau login.",
+        },
+        {
+          icon: "/icons/free.svg",
+          title: "Gratis Selamanya",
+          desc: "Layanan pemendek URL ini sepenuhnya gratis.",
+        },
+      ].map((item, i) => (
+        <div
+          key={i}
+          className="p-6 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 shadow-sm h-full space-y-3 transition"
+        >
+          <img src={item.icon} alt={item.title} className="w-7 h-7 text-blue-600 dark:text-blue-400" />
+          <h4 className="font-semibold text-lg">{item.title}</h4>
+          <p className="text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Tentang */}
       <section id="about" className="px-4 py-20 bg-gray-100 dark:bg-gray-800">
