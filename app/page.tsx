@@ -149,7 +149,7 @@ export default function Home() {
     </div>
     
   </div>
-</section>
+</section> 
       {/* Footer */}
       <footer className="bg-white dark:bg-gray-900 border-t dark:border-gray-700 px-4 py-12 text-sm text-gray-600 dark:text-gray-400">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
