@@ -45,60 +45,59 @@ export default function Home() {
       </section>
 
       {/* Fitur */}
-{/* Fitur */}
-<section id="features" className="px-4 py-20 bg-white dark:bg-gray-900">
-  <div className="max-w-6xl mx-auto">
-    <h3 className="text-2xl font-bold mb-2 text-center md:text-left">
-      Kenapa memilih QuickShort?
-    </h3>
-    <p className="text-center md:text-left text-gray-600 dark:text-gray-300 mb-12">
-      Layanan pemendek URL terbaik, cepat, gratis, dan tanpa perlu daftar akun.
-    </p>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+<section id="features" className="bg-white dark:bg-gray-900 px-4 py-20">
+  <div className="max-w-6xl mx-auto text-center">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
       {[
         {
-          icon: "/icons/icon-like.png",
-          title: "Mudah & Cepat",
-          desc: "Hanya dengan satu klik, link panjang Anda langsung dipendekkan.",
+          icon: "/icons/easy.png",
+          title: "Easy",
+          desc: "ShortURL is easy and fast, enter the long link to get your shortened link",
         },
         {
-          icon: "/icons/icon-responsive.png",
-          title: "Tanpa Daftar",
-          desc: "Gunakan layanan kami tanpa akun atau login.",
+          icon: "/icons/shortened.png",
+          title: "Shortened",
+          desc: "Use any link, no matter what size, ShortURL always shortens",
         },
         {
-          icon: "/icons/icon-secure.png",
-          title: "Aman & Privat",
-          desc: "Kami tidak menyimpan data pribadi Anda secara permanen.",
+          icon: "/icons/secure.png",
+          title: "Secure",
+          desc: "It is fast and secure, our service has HTTPS protocol and data encryption",
         },
         {
-          icon: "/icons/icon-statistics.png",
-          title: "Statistik Lengkap",
-          desc: "Pantau performa link dengan hit counter yang real-time.",
+          icon: "/icons/statistics.png",
+          title: "Statistics",
+          desc: "Check the number of clicks that your shortened URL received",
         },
         {
-          icon: "/icons/icon-unique.png",
-          title: "Kode Unik",
-          desc: "Setiap link punya ID unik yang tidak bisa ditebak.",
+          icon: "/icons/reliable.png",
+          title: "Reliable",
+          desc: "All links that try to disseminate spam, viruses and malware are deleted",
         },
         {
-          icon: "/icons/icon-url.png",
-          title: "Gratis Selamanya",
-          desc: "Layanan pemendek URL ini sepenuhnya gratis tanpa batas.",
+          icon: "/icons/devices.png",
+          title: "Devices",
+          desc: "Compatible with smartphones, tablets and desktop",
         },
       ].map((item, i) => (
         <div
           key={i}
-          className="p-6 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 shadow-sm h-full space-y-3 transition"
+          className="flex flex-col items-center text-center px-4 py-6"
         >
-          <img src={item.icon} alt={item.title} className="w-7 h-7" />
-          <h4 className="font-semibold text-lg">{item.title}</h4>
+          <img
+            src={item.icon}
+            alt={item.title}
+            className="w-12 h-12 mb-4"
+            loading="lazy"
+          />
+          <h4 className="font-semibold text-lg mb-1">{item.title}</h4>
           <p className="text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
         </div>
       ))}
     </div>
   </div>
 </section>
+
 
 
       {/* Tentang */}
