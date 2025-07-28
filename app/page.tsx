@@ -108,30 +108,45 @@ export default function Home() {
   </div>
 </section>
 
+<section id="about" className="px-4 py-20 bg-gray-100 dark:bg-gray-800 transition-colors">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    
+    {/* Gambar */}
+    <div>
+      <img
+        src="/about.png" // Ganti sesuai file kamu
+        alt="Tentang QuickShort"
+        className="w-full h-auto rounded-lg shadow-md"
+        loading="lazy"
+      />
+    </div>
 
+    {/* Teks */}
+    <div className="space-y-10">
+      <div>
+        <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+          Simple and fast URL shortener!
+        </h3>
+        <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+          ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, Linked In, WhatsApp,
+          TikTok, blogs and any domain name. Just paste the long URL and click the Shorten URL button. On the next
+          page, copy the shortened URL and share it on sites, chat and emails.
+        </p>
+      </div>
+      <div>
+        <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+          Shorten, share and track
+        </h3>
+        <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+          Your shortened URLs can be used in publications, documents, ads, blogs, and more. Track statistics for
+          your business and projects by monitoring the number of hits with our click counter.
+        </p>
+      </div>
+    </div>
 
+  </div>
+</section>
 
-
-      {/* Tentang */}
-      <section id="about" className="px-4 py-20 bg-gray-100 dark:bg-gray-800 transition-colors">
-        <div className="max-w-3xl mx-auto space-y-10">
-          <div>
-            <h3 className="text-2xl font-bold mb-4">Simple and fast URL shortener!</h3>
-            <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-              ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, Linked In, WhatsApp,
-              TikTok, blogs and any domain name. Just paste the long URL and click the Shorten URL button. On the next
-              page, copy the shortened URL and share it on sites, chat and emails.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-2xl font-bold mb-4">Shorten, share and track</h3>
-            <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-              Your shortened URLs can be used in publications, documents, ads, blogs, and more. Track statistics for
-              your business and projects by monitoring the number of hits with our click counter.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="bg-white dark:bg-gray-900 border-t dark:border-gray-700 px-4 py-12 text-sm text-gray-600 dark:text-gray-400">
