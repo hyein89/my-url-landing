@@ -117,7 +117,7 @@ export default function Home() {
     {/* Gambar */}
     <div>
       <img
-        src="/about.svg" // Ganti sesuai file kamu
+        src="/about.svg"
         alt="Tentang QuickShort"
         className="w-full h-auto rounded-lg shadow-md"
         loading="lazy"
@@ -131,19 +131,21 @@ export default function Home() {
           How Do URL Shortening Services Work?
         </h3>
         <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-          URL shortening services help you shorten long URLs into shorter, shareable ones. By simply entering a long URL, you will get a short link that can be shared easily. Take advantage of URL shortening to make the link appear cleaner and more attractive..
+          URL shortening services help you shorten long URLs into shorter, shareable ones. By simply entering a long URL, you will get a short link that can be shared easily. Take advantage of URL shortening to make the link appear cleaner and more attractive.
         </p>
       </div>
-    </div>
+
+      <div>
         <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
           Simple and fast URL shortener!
         </h3>
         <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-          ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, Linked In, WhatsApp,
+          ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, LinkedIn, WhatsApp,
           TikTok, blogs and any domain name. Just paste the long URL and click the Shorten URL button. On the next
           page, copy the shortened URL and share it on sites, chat and emails.
         </p>
       </div>
+
       <div>
         <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
           Shorten, share and track
@@ -157,6 +159,7 @@ export default function Home() {
 
   </div>
 </section>
+
 
 
       {/* Footer */}
