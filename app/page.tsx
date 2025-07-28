@@ -1,21 +1,20 @@
-import { Moon, Zap, UserX, DollarSign } from "lucide-react"; // SVG icon modern
-// Tambahkan: npm install lucide-react
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors">
       {/* Header */}
-      <header className="p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 shadow-sm flex flex-wrap justify-between items-center max-w-6xl mx-auto">
-        <h1 className="text-xl font-bold text-blue-600 dark:text-blue-400">QuickShort</h1>
-        <nav className="space-x-6 text-sm text-gray-600 dark:text-gray-300 mt-2 md:mt-0">
-          <a href="#features" className="hover:text-blue-500">Fitur</a>
-          <a href="#about" className="hover:text-blue-500">Tentang</a>
-          <a href="#contact" className="hover:text-blue-500">Kontak</a>
-        </nav>
+      <header className="p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 shadow-sm sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto flex flex-wrap justify-between items-center">
+          <h1 className="text-xl font-bold text-blue-600 dark:text-blue-400">QuickShort</h1>
+          <nav className="space-x-6 text-sm text-gray-600 dark:text-gray-300 mt-2 md:mt-0">
+            <a href="#features" className="hover:text-blue-500 transition">Fitur</a>
+            <a href="#about" className="hover:text-blue-500 transition">Tentang</a>
+            <a href="#contact" className="hover:text-blue-500 transition">Kontak</a>
+          </nav>
+        </div>
       </header>
 
       {/* Hero */}
-      <section className="px-4 py-20 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900 dark:to-blue-800">
+      <section className="px-4 py-20 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900 dark:to-blue-800 transition-all">
         <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
           <div className="flex-1">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
@@ -24,73 +23,95 @@ export default function Home() {
             <p className="mb-6 text-gray-700 dark:text-gray-200 text-base">
               Solusi terbaik untuk memperpendek link panjang menjadi singkat, mudah diingat, dan siap dibagikan.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <form className="flex flex-col sm:flex-row gap-4">
               <input
-                type="text"
+                type="url"
+                required
                 placeholder="Tempelkan link di sini..."
-                className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-none"
               />
-              <button className="px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 transition">
+              <button
+                type="submit"
+                className="px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 transition rounded-none"
+              >
                 Perpendek
               </button>
-            </div>
+            </form>
           </div>
           <div className="flex-1 w-full max-w-sm md:max-w-md">
             <img src="/illustration.png" alt="Ilustrasi" className="w-full h-auto" />
           </div>
         </div>
       </section>
-      {/* Fitur */}
-<section id="features" className="px-4 py-20 bg-white dark:bg-gray-900">
-  <div className="max-w-6xl mx-auto">
-    <h3 className="text-2xl font-bold mb-12 text-center md:text-left">
-      Kenapa memilih QuickShort?
-    </h3>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {[
-        {
-          icon: "/icons/fast.svg",
-          title: "Mudah & Cepat",
-          desc: "Hanya dengan satu klik, link panjang Anda langsung dipendekkan.",
-        },
-        {
-          icon: "/icons/nosignup.svg",
-          title: "Tanpa Daftar",
-          desc: "Gunakan layanan kami tanpa akun atau login.",
-        },
-        {
-          icon: "/icons/free.svg",
-          title: "Gratis Selamanya",
-          desc: "Layanan pemendek URL ini sepenuhnya gratis.",
-        },
-      ].map((item, i) => (
-        <div
-          key={i}
-          className="p-6 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 shadow-sm h-full space-y-3 transition"
-        >
-          <img src={item.icon} alt={item.title} className="w-7 h-7 text-blue-600 dark:text-blue-400" />
-          <h4 className="font-semibold text-lg">{item.title}</h4>
-          <p className="text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
 
+      {/* Fitur */}
+      <section id="features" className="px-4 py-20 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-2xl font-bold mb-12 text-center md:text-left">
+            Kenapa memilih QuickShort?
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: "/icons/icon-like.png",
+                title: "Mudah & Cepat",
+                desc: "Hanya dengan satu klik, link panjang Anda langsung dipendekkan.",
+              },
+              {
+                icon: "/icons/icon-responsive.png",
+                title: "Tanpa Daftar",
+                desc: "Gunakan layanan kami tanpa akun atau login.",
+              },
+              {
+                icon: "/icons/icon-secure.png",
+                title: "Gratis Selamanya",
+                desc: "Layanan pemendek URL ini sepenuhnya gratis.",
+              },
+              {
+                icon: "/icons/icon-statistics.png",
+                title: "Gratis Selamanya",
+                desc: "Layanan pemendek URL ini sepenuhnya gratis.",
+              },
+              {
+                icon: "/icons/icon-unique.png",
+                title: "Gratis Selamanya",
+                desc: "Layanan pemendek URL ini sepenuhnya gratis.",
+              },
+              {
+                icon: "/icons/icon-url.png",
+                title: "Gratis Selamanya",
+                desc: "Layanan pemendek URL ini sepenuhnya gratis.",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="p-6 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 shadow-sm h-full space-y-3 transition"
+              >
+                <img src={item.icon} alt={item.title} className="w-7 h-7" />
+                <h4 className="font-semibold text-lg">{item.title}</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Tentang */}
-      <section id="about" className="px-4 py-20 bg-gray-100 dark:bg-gray-800">
+      <section id="about" className="px-4 py-20 bg-gray-100 dark:bg-gray-800 transition-colors">
         <div className="max-w-3xl mx-auto space-y-10">
           <div>
             <h3 className="text-2xl font-bold mb-4">Simple and fast URL shortener!</h3>
             <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-              ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, Linked In, WhatsApp, TikTok, blogs and any domain name. Just paste the long URL and click the Shorten URL button. On the next page, copy the shortened URL and share it on sites, chat and emails.
+              ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, Linked In, WhatsApp,
+              TikTok, blogs and any domain name. Just paste the long URL and click the Shorten URL button. On the next
+              page, copy the shortened URL and share it on sites, chat and emails.
             </p>
           </div>
           <div>
             <h3 className="text-2xl font-bold mb-4">Shorten, share and track</h3>
             <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-              Your shortened URLs can be used in publications, documents, ads, blogs, and more. Track statistics for your business and projects by monitoring the number of hits with our click counter.
+              Your shortened URLs can be used in publications, documents, ads, blogs, and more. Track statistics for
+              your business and projects by monitoring the number of hits with our click counter.
             </p>
           </div>
         </div>
@@ -113,8 +134,8 @@ export default function Home() {
           <div>
             <h4 className="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Kontak</h4>
             <ul className="space-y-1">
-              <li>Email: support@quickshort.com</li>
-              <li>Instagram: @quickshort</li>
+              <li><a href="mailto:support@quickshort.com" className="hover:underline">support@quickshort.com</a></li>
+              <li><a href="https://instagram.com/quickshort" target="_blank" rel="noreferrer" className="hover:underline">@quickshort</a></li>
             </ul>
           </div>
           <div>
