@@ -1,5 +1,5 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 
 export default function Home() {
   return (
@@ -47,18 +47,15 @@ export default function Home() {
         </div>
       </section>
 
-<section id="features" className="bg-white dark:bg-gray-900 px-4 py-20">
-  <div className="max-w-6xl mx-auto">
-    {/* Title Section */}
-    <h3 className="text-2xl font-bold mb-2 text-center md:text-left">
-      Kenapa memilih QuickShort?
-    </h3>
-    <p className="text-center md:text-left text-gray-600 dark:text-gray-300 mb-12">
-      Layanan pemendek URL terbaik, cepat, gratis, dan tanpa perlu daftar akun.
-    </p>
+      {/* Features */}
+      <section id="features" className="bg-white dark:bg-gray-900 px-4 py-20">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-2xl font-bold mb-2 text-center md:text-left">Kenapa memilih QuickShort?</h3>
+          <p className="text-center md:text-left text-gray-600 dark:text-gray-300 mb-12">
+            Layanan pemendek URL terbaik, cepat, gratis, dan tanpa perlu daftar akun.
+          </p>
 
-    {/* Features Grid */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
             {[
               {
                 icon: "/icons/icon-like.png",
@@ -67,7 +64,7 @@ export default function Home() {
               },
               {
                 icon: "/icons/icon-responsive.png",
-                title: "Devicesr",
+                title: "Devices",
                 desc: "Compatible with smartphones, tablets and desktop.",
               },
               {
@@ -90,72 +87,64 @@ export default function Home() {
                 title: "Shortened",
                 desc: "Use any link, no matter what size, ShortURL always shortens.",
               },
-      ].map((item, i) => (
-        <div
-          key={i}
-          className="flex flex-col sm:flex-row sm:items-start sm:text-left text-center items-center gap-4 px-4 py-4"
-        >
-          <img
-            src={item.icon}
-            alt={item.title}
-            className="w-12 h-12"
-            loading="lazy"
-          />
-          <div>
-            <h4 className="font-semibold text-lg mb-1">{item.title}</h4>
-            <p className="text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="flex flex-col sm:flex-row sm:items-start sm:text-left text-center items-center gap-4 px-4 py-4"
+              >
+                <img src={item.icon} alt={item.title} className="w-12 h-12" loading="lazy" />
+                <div>
+                  <h4 className="font-semibold text-lg mb-1">{item.title}</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
-<section id="about" className="px-4 py-20 bg-gray-100 dark:bg-gray-800 transition-colors">
-  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10">
-    
-    {/* Gambar di kiri (atau di atas saat ponsel) */}
-    <div className="w-full md:w-1/2 flex justify-center">
-      <img
-        src="/about.svg"
-        alt="Tentang QuickShort"
-        className="w-full max-w-sm h-auto"
-        loading="lazy"
-      />
-    </div>
+      {/* About */}
+      <section id="about" className="px-4 py-20 bg-gray-100 dark:bg-gray-800 transition-colors">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+          <div className="w-full md:w-1/2 flex justify-center md:justify-start">
+            <img
+              src="/about.svg"
+              alt="Tentang QuickShort"
+              className="w-full max-w-sm h-auto"
+              loading="lazy"
+            />
+          </div>
+          <div className="w-full md:w-1/2 space-y-8">
+            <div>
+              <h3 className="text-2xl font-bold mb-4">How Do URL Shortening Services Work?</h3>
+              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                URL shortening services help you shorten long URLs into shorter, shareable ones. By simply entering a long URL, you will get a short link that can be shared easily.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Simple and fast URL shortener!</h3>
+              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, Linked In, WhatsApp, TikTok, blogs and any domain name.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Shorten, share and track</h3>
+              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                Your shortened URLs can be used in publications, documents, ads, blogs, and more. Track statistics for your business and projects by monitoring the number of hits with our click counter.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    {/* Teks di kanan */}
-    <div className="w-full md:w-1/2 space-y-10">
-      <div>
-        <h3 className="text-2xl font-bold mb-4">How Do URL Shortening Services Work?</h3>
-        <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-          URL shortening services help you shorten long URLs into shorter, shareable ones. By simply entering a long URL, you will get a short link that can be shared easily. Take advantage of URL shortening to make the link appear cleaner and more attractive..
-        </p>
-      </div>
-    </div>
-        <h3 className="text-2xl font-bold mb-4">Simple and fast URL shortener!</h3>
-        <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-          ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, Linked In, WhatsApp,
-          TikTok, blogs and any domain name. Just paste the long URL and click the Shorten URL button.
-        </p>
-      </div>
-      <div>
-        <h3 className="text-2xl font-bold mb-4">Shorten, share and track</h3>
-        <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-          Your shortened URLs can be used in publications, documents, ads, blogs, and more. Track statistics for
-          your business and projects by monitoring the number of hits with our click counter.
-        </p>
-      </div>
-    </div>
-    
-  </div>
-</section> 
       {/* Footer */}
       <footer className="bg-white dark:bg-gray-900 border-t dark:border-gray-700 px-4 py-12 text-sm text-gray-600 dark:text-gray-400">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <h4 className="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">QuickShort</h4>
-            <p>Shorten World is more than just the best free custom URL shortener, with a powerful Link Management Platform, advanced link tracking features</p>
+            <p>
+              Shorten World is more than just the best free custom URL shortener, with a powerful Link Management Platform, advanced link tracking features
+            </p>
           </div>
           <div>
             <h4 className="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Tentang</h4>
