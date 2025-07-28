@@ -44,7 +44,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Fitur */}
 <section id="features" className="bg-white dark:bg-gray-900 px-4 py-20">
   <div className="max-w-6xl mx-auto text-center">
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
@@ -97,6 +96,7 @@ export default function Home() {
     </div>
   </div>
 </section>
+
 
 
 
