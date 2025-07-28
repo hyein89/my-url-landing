@@ -45,56 +45,61 @@ export default function Home() {
       </section>
 
       {/* Fitur */}
-      <section id="features" className="px-4 py-20 bg-white dark:bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-2xl font-bold mb-12 text-center md:text-left">
-            Kenapa memilih QuickShort?
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: "/icons/icon-like.png",
-                title: "Mudah & Cepat",
-                desc: "Hanya dengan satu klik, link panjang Anda langsung dipendekkan.",
-              },
-              {
-                icon: "/icons/icon-responsive.png",
-                title: "Tanpa Daftar",
-                desc: "Gunakan layanan kami tanpa akun atau login.",
-              },
-              {
-                icon: "/icons/icon-secure.png",
-                title: "Gratis Selamanya",
-                desc: "Layanan pemendek URL ini sepenuhnya gratis.",
-              },
-              {
-                icon: "/icons/icon-statistics.png",
-                title: "Gratis Selamanya",
-                desc: "Layanan pemendek URL ini sepenuhnya gratis.",
-              },
-              {
-                icon: "/icons/icon-unique.png",
-                title: "Gratis Selamanya",
-                desc: "Layanan pemendek URL ini sepenuhnya gratis.",
-              },
-              {
-                icon: "/icons/icon-url.png",
-                title: "Gratis Selamanya",
-                desc: "Layanan pemendek URL ini sepenuhnya gratis.",
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="p-6 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 shadow-sm h-full space-y-3 transition"
-              >
-                <img src={item.icon} alt={item.title} className="w-7 h-7" />
-                <h4 className="font-semibold text-lg">{item.title}</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
-              </div>
-            ))}
-          </div>
+{/* Fitur */}
+<section id="features" className="px-4 py-20 bg-white dark:bg-gray-900">
+  <div className="max-w-6xl mx-auto">
+    <h3 className="text-2xl font-bold mb-2 text-center md:text-left">
+      Kenapa memilih QuickShort?
+    </h3>
+    <p className="text-center md:text-left text-gray-600 dark:text-gray-300 mb-12">
+      Layanan pemendek URL terbaik, cepat, gratis, dan tanpa perlu daftar akun.
+    </p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {[
+        {
+          icon: "/icons/icon-like.png",
+          title: "Mudah & Cepat",
+          desc: "Hanya dengan satu klik, link panjang Anda langsung dipendekkan.",
+        },
+        {
+          icon: "/icons/icon-responsive.png",
+          title: "Tanpa Daftar",
+          desc: "Gunakan layanan kami tanpa akun atau login.",
+        },
+        {
+          icon: "/icons/icon-secure.png",
+          title: "Aman & Privat",
+          desc: "Kami tidak menyimpan data pribadi Anda secara permanen.",
+        },
+        {
+          icon: "/icons/icon-statistics.png",
+          title: "Statistik Lengkap",
+          desc: "Pantau performa link dengan hit counter yang real-time.",
+        },
+        {
+          icon: "/icons/icon-unique.png",
+          title: "Kode Unik",
+          desc: "Setiap link punya ID unik yang tidak bisa ditebak.",
+        },
+        {
+          icon: "/icons/icon-url.png",
+          title: "Gratis Selamanya",
+          desc: "Layanan pemendek URL ini sepenuhnya gratis tanpa batas.",
+        },
+      ].map((item, i) => (
+        <div
+          key={i}
+          className="p-6 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 shadow-sm h-full space-y-3 transition"
+        >
+          <img src={item.icon} alt={item.title} className="w-7 h-7" />
+          <h4 className="font-semibold text-lg">{item.title}</h4>
+          <p className="text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Tentang */}
       <section id="about" className="px-4 py-20 bg-gray-100 dark:bg-gray-800 transition-colors">
