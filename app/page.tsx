@@ -1,3 +1,6 @@
+// app/page.tsx
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors">
