@@ -33,7 +33,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex-1 w-full max-w-sm md:max-w-md">
-            <img src="/illustration.svg" alt="Illustration" className="w-full h-auto" />
+            <img src="/illustration.png" alt="Illustration" className="w-full h-auto" />
           </div>
         </div>
       </section>
