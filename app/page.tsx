@@ -1,10 +1,13 @@
+import { Moon, Zap, UserX, DollarSign } from "lucide-react"; // SVG icon modern
+// Tambahkan: npm install lucide-react
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-800">
+    <main className="min-h-screen bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors">
       {/* Header */}
-      <header className="p-4 bg-white shadow-sm flex flex-wrap justify-between items-center max-w-6xl mx-auto">
-        <h1 className="text-xl font-bold text-blue-600">QuickShort</h1>
-        <nav className="space-x-6 text-sm text-gray-600 mt-2 md:mt-0">
+      <header className="p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 shadow-sm flex flex-wrap justify-between items-center max-w-6xl mx-auto">
+        <h1 className="text-xl font-bold text-blue-600 dark:text-blue-400">QuickShort</h1>
+        <nav className="space-x-6 text-sm text-gray-600 dark:text-gray-300 mt-2 md:mt-0">
           <a href="#features" className="hover:text-blue-500">Fitur</a>
           <a href="#about" className="hover:text-blue-500">Tentang</a>
           <a href="#contact" className="hover:text-blue-500">Kontak</a>
@@ -12,20 +15,20 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="px-4 py-16 bg-gradient-to-br from-blue-100 to-blue-50">
-        <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8">
+      <section className="px-4 py-20 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900 dark:to-blue-800">
+        <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
           <div className="flex-1">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
               Perpendek URL Anda dengan Cepat
             </h2>
-            <p className="mb-6 text-gray-700 text-base">
+            <p className="mb-6 text-gray-700 dark:text-gray-200 text-base">
               Solusi terbaik untuk memperpendek link panjang menjadi singkat, mudah diingat, dan siap dibagikan.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <input
                 type="text"
                 placeholder="Tempelkan link di sini..."
-                className="flex-1 px-4 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
               <button className="px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 transition">
                 Perpendek
@@ -33,26 +36,27 @@ export default function Home() {
             </div>
           </div>
           <div className="flex-1 w-full max-w-sm md:max-w-md">
-            <img src="/illustration.png" alt="Illustration" className="w-full h-auto" />
+            <img src="/illustration.png" alt="Ilustrasi" className="w-full h-auto" />
           </div>
         </div>
       </section>
 
       {/* Fitur */}
-      <section id="features" className="px-4 py-20 bg-white">
+      <section id="features" className="px-4 py-20 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <h3 className="text-2xl font-bold mb-12 text-center md:text-left">
             Kenapa memilih QuickShort?
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
-              { title: "Mudah & Cepat", desc: "Hanya dengan satu klik, link panjang Anda langsung dipendekkan." },
-              { title: "Tanpa Daftar", desc: "Gunakan layanan kami tanpa akun atau login." },
-              { title: "Gratis Selamanya", desc: "Layanan pemendek URL ini sepenuhnya gratis." },
+              { icon: <Zap size={28} />, title: "Mudah & Cepat", desc: "Hanya dengan satu klik, link panjang Anda langsung dipendekkan." },
+              { icon: <UserX size={28} />, title: "Tanpa Daftar", desc: "Gunakan layanan kami tanpa akun atau login." },
+              { icon: <DollarSign size={28} />, title: "Gratis Selamanya", desc: "Layanan pemendek URL ini sepenuhnya gratis." },
             ].map((item, i) => (
-              <div key={i} className="p-6 border shadow-sm h-full">
-                <h4 className="font-semibold text-lg mb-2">{item.title}</h4>
-                <p className="text-sm text-gray-600">{item.desc}</p>
+              <div key={i} className="p-6 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 shadow-sm h-full space-y-3">
+                <div className="text-blue-600 dark:text-blue-400">{item.icon}</div>
+                <h4 className="font-semibold text-lg">{item.title}</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -60,44 +64,46 @@ export default function Home() {
       </section>
 
       {/* Tentang */}
-      <section id="about" className="px-4 py-20 bg-gray-100">
-        <div className="max-w-3xl mx-auto">
-          <h3 className="text-2xl font-bold mb-4">Simple and fast URL shortener!</h3>
-          <p className="text-gray-700 text-base leading-relaxed">
-            ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, Linked In, WhatsApp, TikTok, blogs and any domain name. Just paste the long URL and click the Shorten URL button. On the next page, copy the shortened URL and share it on sites, chat and emails. After shortening the URL, check how many clicks it received.
-          </p>
-        </div>
-        <div className="max-w-3xl mx-auto">
-          <h3 className="text-2xl font-bold mb-4">Shorten, share and track</h3>
-          <p className="text-gray-700 text-base leading-relaxed">
-            Your shortened URLs can be used in publications, documents, advertisements, blogs, forums, instant messages, and other locations. Track statistics for your business and projects by monitoring the number of hits from your URL with our click counter.
-          </p>
+      <section id="about" className="px-4 py-20 bg-gray-100 dark:bg-gray-800">
+        <div className="max-w-3xl mx-auto space-y-10">
+          <div>
+            <h3 className="text-2xl font-bold mb-4">Simple and fast URL shortener!</h3>
+            <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+              ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, Linked In, WhatsApp, TikTok, blogs and any domain name. Just paste the long URL and click the Shorten URL button. On the next page, copy the shortened URL and share it on sites, chat and emails.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold mb-4">Shorten, share and track</h3>
+            <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+              Your shortened URLs can be used in publications, documents, ads, blogs, and more. Track statistics for your business and projects by monitoring the number of hits with our click counter.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-white border-t px-4 py-12 text-sm text-gray-600">
+      <footer className="bg-white dark:bg-gray-900 border-t dark:border-gray-700 px-4 py-12 text-sm text-gray-600 dark:text-gray-400">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <h4 className="text-base font-semibold text-gray-800 mb-2">QuickShort</h4>
+            <h4 className="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">QuickShort</h4>
             <p>Pemendek URL cepat dan gratis untuk semua pengguna.</p>
           </div>
           <div>
-            <h4 className="text-base font-semibold text-gray-800 mb-2">Tentang</h4>
+            <h4 className="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Tentang</h4>
             <ul className="space-y-1">
               <li><a href="#features" className="hover:underline">Fitur</a></li>
               <li><a href="#about" className="hover:underline">Cara Kerja</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-base font-semibold text-gray-800 mb-2">Kontak</h4>
+            <h4 className="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Kontak</h4>
             <ul className="space-y-1">
               <li>Email: support@quickshort.com</li>
               <li>Instagram: @quickshort</li>
             </ul>
           </div>
           <div>
-            <h4 className="text-base font-semibold text-gray-800 mb-2">Lainnya</h4>
+            <h4 className="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Lainnya</h4>
             <ul className="space-y-1">
               <li><a href="#" className="hover:underline">Privacy Policy</a></li>
               <li><a href="#" className="hover:underline">Terms of Service</a></li>
