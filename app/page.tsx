@@ -168,7 +168,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <h4 className="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">QuickShort</h4>
-            <p>Pemendek URL cepat dan gratis untuk semua pengguna.</p>
+            <p>Shorten World is more than just the best free custom URL shortener, with a powerful Link Management Platform, advanced link tracking features</p>
           </div>
           <div>
             <h4 className="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Tentang</h4>
