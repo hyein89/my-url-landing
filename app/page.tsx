@@ -42,7 +42,7 @@ export default function Home() {
             </form>
           </div>
           <div className="flex-1 w-full max-w-sm md:max-w-md">
-            <img src="/illustration.png" alt="Ilustrasi" className="w-full h-auto" />
+            <img src="/illustration.png" alt="Ilustrasi" className="w-full h-auto" loading="lazy" />
           </div>
         </div>
       </section>
@@ -116,12 +116,13 @@ export default function Home() {
     
     {/* Gambar */}
     <div>
-      <img
-        src="/about.svg"
-        alt="Tentang QuickShort"
-        className="w-full h-auto rounded-lg shadow-md"
-        loading="lazy"
-      />
+<img
+  src="/about.svg"
+  alt="Tentang shorten"
+  className="w-full h-auto"
+  loading="lazy"
+/>
+
     </div>
 
     {/* Teks */}
