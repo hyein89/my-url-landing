@@ -27,41 +27,84 @@ export default function Home() {
               Solusi terbaik untuk memperpendek link panjang menjadi singkat, mudah diingat, dan siap dibagikan.
             </p>
             <form
+const [result, setResult] = useState("");
+const [error, setError] = useState("");
+const [copySuccess, setCopySuccess] = useState("");
+
+<form
   className="flex flex-col sm:flex-row gap-4"
   onSubmit={async (e) => {
     e.preventDefault();
     const input = e.currentTarget.querySelector("input") as HTMLInputElement;
     const longUrl = input.value;
 
-    const res = await fetch("http://robhyr.xo.je/shorten.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url: longUrl }),
-    });
+    setResult("");
+    setError("");
+    setCopySuccess("");
 
-    const data = await res.json();
-    if (data.short_url) {
-      alert("Short URL berhasil dibuat: " + data.short_url);
-    } else {
-      alert("Gagal: " + (data.error || "Terjadi kesalahan"));
+    try {
+      const res = await fetch("https://robhyr.xo.je/shorten.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url: longUrl }),
+      });
+
+      const data = await res.json();
+      if (data.short_url) {
+        setResult(data.short_url);
+        input.value = "";
+      } else {
+        setError(data.error || "Terjadi kesalahan saat mempersingkat URL.");
+      }
+    } catch (err) {
+      setError("Gagal terhubung ke server.");
     }
-
-    input.value = "";
   }}
 >
+  <input
+    type="url"
+    required
+    placeholder="Tempelkan link di sini..."
+    className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-md"
+  />
+  <button
+    type="submit"
+    className="px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 transition rounded-md"
+  >
+    Perpendek
+  </button>
+</form>
 
-              <input
-                type="url"
-                required
-                placeholder="Tempelkan link di sini..."
-                className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-md"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 transition rounded-md"
-              >
-                Perpendek
-              </button>
+{/* Error Area */}
+{error && (
+  <p className="mt-3 text-red-500 dark:text-red-400">{error}</p>
+)}
+
+{/* Hasil & Copy Area */}
+{result && (
+  <div className="mt-4 bg-gray-100 dark:bg-gray-700 p-4 rounded-md flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
+    <a
+      href={result}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-600 dark:text-blue-300 break-all underline"
+    >
+      {result}
+    </a>
+    <button
+      onClick={() => {
+        navigator.clipboard.writeText(result);
+        setCopySuccess("Tersalin!");
+        setTimeout(() => setCopySuccess(""), 2000);
+      }}
+      className="text-xs bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
+    >
+      Salin
+    </button>
+    {copySuccess && <span className="text-green-500 text-xs">{copySuccess}</span>}
+  </div>
+)}
+
             </form>
           </div>
           <div className="flex-1 w-full max-w-sm md:max-w-md">
