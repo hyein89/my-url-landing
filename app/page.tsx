@@ -52,10 +52,10 @@ export default function Home() {
 <section id="features" className="bg-white dark:bg-gray-900 px-4 py-20">
   <div className="max-w-6xl mx-auto">
     <h3 className="text-2xl font-bold mb-2 text-center md:text-left">
-      Kenapa memilih QuickShort?
+      Want More? Try Premium Features!
     </h3>
     <p className="text-center md:text-left text-gray-600 dark:text-gray-300 mb-6">
-      Layanan pemendek URL terbaik, cepat, gratis, dan tanpa perlu daftar akun.
+      Custom short links, powerful dashboard, detailed analytics, API, UTM builder, QR codes, browser extension, app integrations and support
     </p>
 
     {/* Tombol Create Account */}
