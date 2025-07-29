@@ -1,39 +1,12 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors text-sm md:text-base">
-      {/* Header */}
-      <header className="p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 shadow-sm sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto flex flex-wrap justify-between items-center">
-          <h1 className="text-lg md:text-xl font-bold text-blue-600 dark:text-blue-400">QuickShort</h1>
-          <nav className="space-x-4 md:space-x-6 text-xs md:text-sm text-gray-600 dark:text-gray-300 mt-2 md:mt-0">
-            <a href="#features" className="hover:text-blue-500 transition">Fitur</a>
-            <a href="#about" className="hover:text-blue-500 transition">Tentang</a>
-            <a href="#contact" className="hover:text-blue-500 transition">Kontak</a>
-          </nav>
-        </div>
-      </header>
+  const [result, setResult] = useState("");
+  const [error, setError] = useState("");
+  const [copySuccess, setCopySuccess] = useState("");
 
-      {/* Hero */}
-      <section className="px-4 py-16 md:py-20 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900 dark:to-blue-800 transition-all">
-        <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
-          <div className="flex-1">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-4 md:mb-6 leading-snug md:leading-tight">
-              Perpendek URL Anda dengan Cepat
-            </h2>
-            <p className="mb-6 text-gray-700 dark:text-gray-200 text-sm md:text-base">
-              Solusi terbaik untuk memperpendek link panjang menjadi singkat, mudah diingat, dan siap dibagikan.
-            </p>
-            <form
-const [result, setResult] = useState("");
-const [error, setError] = useState("");
-const [copySuccess, setCopySuccess] = useState("");
-
-<form
-  className="flex flex-col sm:flex-row gap-4"
-  onSubmit={async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const input = e.currentTarget.querySelector("input") as HTMLInputElement;
     const longUrl = input.value;
@@ -59,59 +32,87 @@ const [copySuccess, setCopySuccess] = useState("");
     } catch (err) {
       setError("Gagal terhubung ke server.");
     }
-  }}
->
-  <input
-    type="url"
-    required
-    placeholder="Tempelkan link di sini..."
-    className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-md"
-  />
-  <button
-    type="submit"
-    className="px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 transition rounded-md"
-  >
-    Perpendek
-  </button>
-</form>
+  };
 
-{/* Error Area */}
-{error && (
-  <p className="mt-3 text-red-500 dark:text-red-400">{error}</p>
-)}
+  return (
+    <main className="min-h-screen bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors text-sm md:text-base">
+      {/* Header */}
+      <header className="p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 shadow-sm sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto flex flex-wrap justify-between items-center">
+          <h1 className="text-lg md:text-xl font-bold text-blue-600 dark:text-blue-400">QuickShort</h1>
+          <nav className="space-x-4 md:space-x-6 text-xs md:text-sm text-gray-600 dark:text-gray-300 mt-2 md:mt-0">
+            <a href="#features" className="hover:text-blue-500 transition">Fitur</a>
+            <a href="#about" className="hover:text-blue-500 transition">Tentang</a>
+            <a href="#contact" className="hover:text-blue-500 transition">Kontak</a>
+          </nav>
+        </div>
+      </header>
 
-{/* Hasil & Copy Area */}
-{result && (
-  <div className="mt-4 bg-gray-100 dark:bg-gray-700 p-4 rounded-md flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
-    <a
-      href={result}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-blue-600 dark:text-blue-300 break-all underline"
-    >
-      {result}
-    </a>
-    <button
-      onClick={() => {
-        navigator.clipboard.writeText(result);
-        setCopySuccess("Tersalin!");
-        setTimeout(() => setCopySuccess(""), 2000);
-      }}
-      className="text-xs bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
-    >
-      Salin
-    </button>
-    {copySuccess && <span className="text-green-500 text-xs">{copySuccess}</span>}
-  </div>
-)}
+      {/* Hero */}
+      <section className="px-4 py-16 md:py-20 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900 dark:to-blue-800 transition-all">
+        <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
+          <div className="flex-1">
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-4 md:mb-6 leading-snug md:leading-tight">
+              Perpendek URL Anda dengan Cepat
+            </h2>
+            <p className="mb-6 text-gray-700 dark:text-gray-200 text-sm md:text-base">
+              Solusi terbaik untuk memperpendek link panjang menjadi singkat, mudah diingat, dan siap dibagikan.
+            </p>
 
+            {/* FORM */}
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
+              <input
+                type="url"
+                required
+                placeholder="Tempelkan link di sini..."
+                className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-md"
+              />
+              <button
+                type="submit"
+                className="px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 transition rounded-md"
+              >
+                Perpendek
+              </button>
             </form>
+
+            {/* Error */}
+            {error && <p className="mt-3 text-red-500 dark:text-red-400">{error}</p>}
+
+            {/* Hasil */}
+            {result && (
+              <div className="mt-4 bg-gray-100 dark:bg-gray-700 p-4 rounded-md flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
+                <a
+                  href={result}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 dark:text-blue-300 break-all underline"
+                >
+                  {result}
+                </a>
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText(result);
+                    setCopySuccess("Tersalin!");
+                    setTimeout(() => setCopySuccess(""), 2000);
+                  }}
+                  className="text-xs bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
+                >
+                  Salin
+                </button>
+                {copySuccess && <span className="text-green-500 text-xs">{copySuccess}</span>}
+              </div>
+            )}
           </div>
+
+          {/* Ilustrasi */}
           <div className="flex-1 w-full max-w-sm md:max-w-md">
             <img src="/illustration.png" alt="Ilustrasi" className="w-full h-auto" loading="lazy" />
           </div>
         </div>
       </section>
+  );
+}
+
 
       {/* Features */}
       <section id="features" className="bg-white dark:bg-gray-900 px-4 py-16 md:py-20">
