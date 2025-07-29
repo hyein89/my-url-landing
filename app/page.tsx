@@ -26,7 +26,30 @@ export default function Home() {
             <p className="mb-6 text-gray-700 dark:text-gray-200 text-sm md:text-base">
               Solusi terbaik untuk memperpendek link panjang menjadi singkat, mudah diingat, dan siap dibagikan.
             </p>
-            <form className="flex flex-col sm:flex-row gap-4">
+            <form
+  className="flex flex-col sm:flex-row gap-4"
+  onSubmit={async (e) => {
+    e.preventDefault();
+    const input = e.currentTarget.querySelector("input") as HTMLInputElement;
+    const longUrl = input.value;
+
+    const res = await fetch("https://your-backend.com/shorten.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url: longUrl }),
+    });
+
+    const data = await res.json();
+    if (data.short_url) {
+      alert("Short URL berhasil dibuat: " + data.short_url);
+    } else {
+      alert("Gagal: " + (data.error || "Terjadi kesalahan"));
+    }
+
+    input.value = "";
+  }}
+>
+
               <input
                 type="url"
                 required
