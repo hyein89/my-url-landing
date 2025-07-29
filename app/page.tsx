@@ -48,12 +48,22 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section id="features" className="bg-white dark:bg-gray-900 px-4 py-20">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-2xl font-bold mb-2 text-center md:text-left">Kenapa memilih QuickShort?</h3>
-          <p className="text-center md:text-left text-gray-600 dark:text-gray-300 mb-12">
-            Layanan pemendek URL terbaik, cepat, gratis, dan tanpa perlu daftar akun.
-          </p>
+<section id="features" className="bg-white dark:bg-gray-900 px-4 py-20">
+  <div className="max-w-6xl mx-auto">
+    <h3 className="text-2xl font-bold mb-2 text-center md:text-left">Kenapa memilih QuickShort?</h3>
+    <p className="text-center md:text-left text-gray-600 dark:text-gray-300 mb-6">
+      Layanan pemendek URL terbaik, cepat, gratis, dan tanpa perlu daftar akun.
+    </p>
+
+    {/* Tombol Create Account */}
+    <div className="flex justify-center md:justify-start">
+      <a
+        href="/register"
+        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 transition-colors duration-200"
+      >
+        Create Account
+      </a>
+    </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
             {[
