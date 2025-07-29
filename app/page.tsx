@@ -16,11 +16,14 @@ export default function Home() {
     setCopySuccess("");
 
     try {
-      const res = await fetch("https://robhyr.xo.je/shorten.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url: longUrl }),
-      });
+await fetch("https://robhyr.xo.je/shorten.php", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ url: inputUrl }),
+});
+
 
       const data = await res.json();
       if (data.short_url) {
