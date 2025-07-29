@@ -6,41 +6,46 @@ export default function Home() {
   const [error, setError] = useState("");
   const [copySuccess, setCopySuccess] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const input = e.currentTarget.querySelector("input") as HTMLInputElement;
-    const longUrl = input.value.trim();
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  const input = e.currentTarget.querySelector("input") as HTMLInputElement;
+  const longUrl = input.value.trim();
 
-    setResult("");
-    setError("");
-    setCopySuccess("");
+  setResult("");
+  setError("");
+  setCopySuccess("");
 
-    if (!longUrl) {
-      setError("URL tidak boleh kosong.");
-      return;
+  if (!longUrl) {
+    setError("URL tidak boleh kosong.");
+    return;
+  }
+
+  try {
+    const res = await fetch("https://api.tinyurl.com/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer 5ocjmGQoYpOvC3jQFeZv39Dnx6vDFDFpuPxwUElUmVsXESd4lFKTNKMl5VXM", // 🔑 API Key kamu
+      },
+      body: JSON.stringify({
+        url: longUrl,
+        domain: "tinyurl.com", // atau "tiny.one"
+      }),
+    });
+
+    const data = await res.json();
+
+    if (data.data && data.data.tiny_url) {
+      setResult(data.data.tiny_url);
+      input.value = "";
+    } else {
+      setError(data.errors?.[0]?.message || "Gagal membuat URL pendek.");
     }
+  } catch (err) {
+    setError("Gagal terhubung ke TinyURL.");
+  }
+};
 
-    try {
-      const res = await fetch("https://robhyr.xo.je/shorten.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ url: longUrl }),
-      });
-
-      const data = await res.json();
-
-      if (data.short) {
-        setResult(data.short);
-        input.value = "";
-      } else {
-        setError(data.error || "Terjadi kesalahan saat mempersingkat URL.");
-      }
-    } catch (err) {
-      setError("Gagal terhubung ke server.");
-    }
-  };
 
   const handleCopy = () => {
     navigator.clipboard.writeText(result).then(() => {
