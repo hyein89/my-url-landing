@@ -72,7 +72,7 @@ export default function Home() {
 
           {/* Grid Fitur */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {["Easy", "Devices", "Secure", "Statistics", "Reliable", "Shortened"].map((title, i) => (
+            {["like", "responsive", "Secure", "Statistics", "unique", "url"].map((title, i) => (
               <div key={i} className="flex items-start gap-4 text-left">
                 <img src={`/icons/icon-${title.toLowerCase()}.png`} alt={title} className="w-10 h-10" loading="lazy" />
                 <div>
