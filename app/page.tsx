@@ -9,25 +9,30 @@ export default function Home() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const input = e.currentTarget.querySelector("input") as HTMLInputElement;
-    const longUrl = input.value;
+    const longUrl = input.value.trim();
 
     setResult("");
     setError("");
     setCopySuccess("");
 
-    try {
-await fetch("https://robhyr.xo.je/shorten.php", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({ url: inputUrl }),
-});
+    if (!longUrl) {
+      setError("URL tidak boleh kosong.");
+      return;
+    }
 
+    try {
+      const res = await fetch("https://robhyr.xo.je/shorten.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: longUrl }),
+      });
 
       const data = await res.json();
-      if (data.short_url) {
-        setResult(data.short_url);
+
+      if (data.short) {
+        setResult(data.short);
         input.value = "";
       } else {
         setError(data.error || "Terjadi kesalahan saat mempersingkat URL.");
@@ -35,6 +40,13 @@ await fetch("https://robhyr.xo.je/shorten.php", {
     } catch (err) {
       setError("Gagal terhubung ke server.");
     }
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(result).then(() => {
+      setCopySuccess("Tautan disalin!");
+      setTimeout(() => setCopySuccess(""), 2000);
+    });
   };
 
   return (
