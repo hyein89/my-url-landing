@@ -110,7 +110,7 @@ export default function Home() {
             <img
               src="/about.svg"
               alt="Tentang QuickShort"
-              className="w-full max-w-sm h-auto"
+              className="w-full h-auto max-w-[500px]"
               loading="lazy"
             />
           </div>
