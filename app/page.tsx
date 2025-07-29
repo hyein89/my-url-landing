@@ -33,7 +33,7 @@ export default function Home() {
     const input = e.currentTarget.querySelector("input") as HTMLInputElement;
     const longUrl = input.value;
 
-    const res = await fetch("https://your-backend.com/shorten.php", {
+    const res = await fetch("http://robhyr.xo.je/shorten.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url: longUrl }),
