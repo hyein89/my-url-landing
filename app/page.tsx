@@ -48,15 +48,18 @@ export default function Home() {
       </section>
 
       {/* Features */}
+{/* Features */}
 <section id="features" className="bg-white dark:bg-gray-900 px-4 py-20">
   <div className="max-w-6xl mx-auto">
-    <h3 className="text-2xl font-bold mb-2 text-center md:text-left">Kenapa memilih QuickShort?</h3>
+    <h3 className="text-2xl font-bold mb-2 text-center md:text-left">
+      Kenapa memilih QuickShort?
+    </h3>
     <p className="text-center md:text-left text-gray-600 dark:text-gray-300 mb-6">
       Layanan pemendek URL terbaik, cepat, gratis, dan tanpa perlu daftar akun.
     </p>
 
     {/* Tombol Create Account */}
-    <div className="flex justify-center md:justify-start">
+    <div className="flex justify-center md:justify-start mb-8">
       <a
         href="/register"
         className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 transition-colors duration-200"
@@ -65,53 +68,57 @@ export default function Home() {
       </a>
     </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-            {[
-              {
-                icon: "/icons/icon-like.png",
-                title: "Easy",
-                desc: "ShortURL is easy and fast, enter the long link to get your shortened link.",
-              },
-              {
-                icon: "/icons/icon-responsive.png",
-                title: "Devices",
-                desc: "Compatible with smartphones, tablets and desktop.",
-              },
-              {
-                icon: "/icons/icon-secure.png",
-                title: "Secure",
-                desc: "It is fast and secure, our service has HTTPS protocol and data encryption.",
-              },
-              {
-                icon: "/icons/icon-statistics.png",
-                title: "Statistics",
-                desc: "Check the number of clicks that your shortened URL received.",
-              },
-              {
-                icon: "/icons/icon-unique.png",
-                title: "Reliable",
-                desc: "All links that try to disseminate spam, viruses and malware are deleted.",
-              },
-              {
-                icon: "/icons/icon-url.png",
-                title: "Shortened",
-                desc: "Use any link, no matter what size, ShortURL always shortens.",
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="flex flex-col sm:flex-row sm:items-start sm:text-left text-center items-center gap-4 px-4 py-4"
-              >
-                <img src={item.icon} alt={item.title} className="w-12 h-12" loading="lazy" />
-                <div>
-                  <h4 className="font-semibold text-lg mb-1">{item.title}</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+    {/* Pemisah */}
+    <hr className="border-gray-300 dark:border-gray-600 mb-10" />
+
+    {/* Grid Fitur */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+      {[
+        {
+          icon: "/icons/icon-like.png",
+          title: "Easy",
+          desc: "ShortURL is easy and fast, enter the long link to get your shortened link.",
+        },
+        {
+          icon: "/icons/icon-responsive.png",
+          title: "Devices",
+          desc: "Compatible with smartphones, tablets and desktop.",
+        },
+        {
+          icon: "/icons/icon-secure.png",
+          title: "Secure",
+          desc: "It is fast and secure, our service has HTTPS protocol and data encryption.",
+        },
+        {
+          icon: "/icons/icon-statistics.png",
+          title: "Statistics",
+          desc: "Check the number of clicks that your shortened URL received.",
+        },
+        {
+          icon: "/icons/icon-unique.png",
+          title: "Reliable",
+          desc: "All links that try to disseminate spam, viruses and malware are deleted.",
+        },
+        {
+          icon: "/icons/icon-url.png",
+          title: "Shortened",
+          desc: "Use any link, no matter what size, ShortURL always shortens.",
+        },
+      ].map((item, i) => (
+        <div
+          key={i}
+          className="flex items-start text-left gap-4 px-2 py-4"
+        >
+          <img src={item.icon} alt={item.title} className="w-12 h-12" loading="lazy" />
+          <div>
+            <h4 className="font-semibold text-lg mb-1">{item.title}</h4>
+            <p className="text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* About */}
       <section id="about" className="px-4 py-20 bg-gray-100 dark:bg-gray-800 transition-colors">
